@@ -22,7 +22,14 @@ namespace WebSalesMvc.Controllers
         {
             return View();
         }
+        public IActionResult About()
+        {
+          
+            ViewData["Message"] = "Salles Web MVC App from c#";
+            ViewData["Aluno"] = "Cristiano Ramos";
 
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
