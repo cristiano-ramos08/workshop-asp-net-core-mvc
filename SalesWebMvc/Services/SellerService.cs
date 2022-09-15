@@ -21,6 +21,11 @@ namespace SalesWebMvc.Services
         {
             return _context.Seller.ToList(); //ToList converte para uma lista.
         }
-            
+         public void Insert(Seller obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }   
+
     }
 }
