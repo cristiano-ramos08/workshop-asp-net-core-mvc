@@ -19,7 +19,7 @@ namespace SalesWebMvc.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-
+        [Required(ErrorMessage = "{0} requerid")]
         [Display(Name = "Birth Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
@@ -28,12 +28,12 @@ namespace SalesWebMvc.Models
         [Required(ErrorMessage = "{0} requerid")]
         [Range(100.0, 50000.0, ErrorMessage = "{0} must be from {1} to {2}")]
         [Display(Name = "Base Salary")]
-        [DisplayFormat(DataFormatString = "{0:F2}") ]
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double BaseSalary { get; set; }
 
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
-        ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
+        public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller()
         {
